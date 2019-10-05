@@ -5,14 +5,14 @@ export interface Props {
 }
 
 export function Header(props: Props) {
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) =>
+  const handleLinkClick = (e: React.MouseEvent<HTMLButtonElement>) =>
     props.pageClick(e.currentTarget.innerText);
 
   return (
     <header>
       <div className="navbar navbar-dark bg-dark box-shadow">
         <div className="container d-flex justify-content-between">
-          <a href="#" className="navbar-brand d-flex align-items-center">
+          <button className="btn btn-link navbar-brand d-flex align-items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -29,22 +29,20 @@ export function Header(props: Props) {
               <circle cx="12" cy="13" r="4" />
             </svg>
             <strong>Contact</strong>
-          </a>
+          </button>
           <nav className="nav nav-masthead justify-content-center">
-            <a
-              className="nav-link active"
-              href="#"
+            <button
+              className="nav-link active btn btn-link"
               onClick={e => handleLinkClick(e)}
             >
               Home
-            </a>
-            <a
-              className="nav-link active"
-              href="#"
+            </button>
+            <button
+              className="nav-link active btn btn-link"
               onClick={e => handleLinkClick(e)}
             >
               Contacts
-            </a>
+            </button>
           </nav>
         </div>
       </div>
