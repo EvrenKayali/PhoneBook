@@ -15,8 +15,8 @@ const App: React.FC = () => {
     <>
       <Header pageClick={pageClick} />
       <main role="main" className="container">
-        {page == "Contacts" && <Contact />}
-        {page == "Home" && <Home />}
+        {page === "Contacts" && <Contact />}
+        {page === "Home" && <Home />}
       </main>
     </>
   );
