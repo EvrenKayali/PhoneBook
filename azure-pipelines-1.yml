@@ -21,11 +21,13 @@ steps:
     checkLatest: true
 
 - task: Yarn@3
+  displayName: 'Install Dependencies'
   inputs:
     projectDirectory: 'Client'
     arguments: 'install'
 
 - task: Yarn@3
+  displayName: 'Run Tests'
   inputs:
     projectDirectory: 'Client'
     arguments: 'install'
