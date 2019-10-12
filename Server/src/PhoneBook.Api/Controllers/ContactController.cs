@@ -19,7 +19,7 @@ namespace PhoneBook.Api.Controllers
                 new ContactModel { Id = 2, Name = "Evren Kayali", PhoneNumber="+61467214630" },
                 new ContactModel { Id = 3, Name = "Omer Kaya", PhoneNumber="+905326107664" },
                 new ContactModel { Id = 4, Name = "Ali Bakir", PhoneNumber="+61467214630" },
-                new ContactModel { Id = 5, Name = "Banu Cevik2", PhoneNumber="+61467214630" },
+                new ContactModel { Id = 5, Name = "Banu Cevik", PhoneNumber="+61467214630" },
             };
 
             var result = filter == null
