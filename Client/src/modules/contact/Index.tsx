@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export interface contact {
   id: number;
@@ -8,11 +8,7 @@ export interface contact {
 }
 
 export const Contact: React.FC = () => {
-  const mockContactList = [
-    { id: 1, name: "Evren", phone: "23423434", selected: false },
-    { id: 2, name: "Erhan", phone: "123123", selected: true }
-  ];
-  const [contactList, setContactList] = useState<contact[]>(mockContactList);
+  const [contactList, setContactList] = useState<contact[]>([]);
 
   const toggleContactSelection = (id: number) => {
     var list = [...contactList];
@@ -22,6 +18,15 @@ export const Contact: React.FC = () => {
     }
     setContactList(list);
   };
+
+  useEffect(() => {
+    fetch("https://localhost:5001/contact")
+      .then(response => response.json())
+      .then(response =>
+        response.map((r: contact) => ({ selected: false, ...r }))
+      )
+      .then((response: contact[]) => setContactList(response));
+  }, []);
 
   return (
     <>
