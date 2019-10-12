@@ -16,7 +16,6 @@ export const Contact: React.FC = () => {
     if (item) {
       item.selected = !item.selected;
     }
-    //command to trigger
     setContactList(list);
   };
 
