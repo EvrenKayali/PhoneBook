@@ -20,9 +20,7 @@ export const Contact: React.FC = () => {
   };
 
   useEffect(() => {
-    fetch(
-      "https://localhost:5001/contacthttps://wa-phonebook-backend.azurewebsites.net/contact"
-    )
+    fetch("https://wa-phonebook-backend.azurewebsites.net/contact")
       .then(response => response.json())
       .then(response =>
         response.map((r: contact) => ({ selected: false, ...r }))
