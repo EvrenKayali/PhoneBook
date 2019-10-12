@@ -40,7 +40,7 @@ namespace PhoneBook.Api
 
             app.UseRouting();
 
-            app.UseCors(builder => builder.WithOrigins("http://localhost:3000"));
+            app.UseCors(builder => builder.AllowAnyOrigin());
 
             app.UseAuthorization();
 
