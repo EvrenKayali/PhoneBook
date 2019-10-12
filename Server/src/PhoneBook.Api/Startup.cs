@@ -40,6 +40,8 @@ namespace PhoneBook.Api
 
             app.UseRouting();
 
+            app.UseCors(builder => builder.WithOrigins("http://localhost:3000"));
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
