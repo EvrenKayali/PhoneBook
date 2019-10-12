@@ -33,3 +33,8 @@ steps:
     arguments: 'test'
   env:
     CI: true
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
