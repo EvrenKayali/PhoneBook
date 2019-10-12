@@ -30,6 +30,6 @@ steps:
   displayName: 'Run Tests'
   inputs:
     projectDirectory: 'Client'
-    arguments: 'install'
+    arguments: 'test'
   env:
     CI: true
