@@ -25,7 +25,7 @@ steps:
     projectDirectory: 'Client'
     arguments: 'install'
 
-- task: Yarn@3
-  inputs:
-    projectDirectory: 'Client'
-    arguments: 'test'
+- script: yarn test
+  displayName: "tests"
+  env:
+    CI: true
