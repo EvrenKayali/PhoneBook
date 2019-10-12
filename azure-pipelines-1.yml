@@ -10,10 +10,21 @@ trigger:
   paths:
     include:
       - Client/*
+
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: YarnInstaller@3
+  inputs:
+    versionSpec: '1.x'
+    checkLatest: true
+
+- task: Yarn@3
+  inputs:
+    projectDirectory: 'Client'
+    arguments: 'test'
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
