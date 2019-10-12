@@ -34,6 +34,21 @@ steps:
   env:
     CI: true
 
+- task: Yarn@3
+  displayName: 'Build'
+  inputs:
+    projectDirectory: 'Client'
+    arguments: 'build'
+  env:
+    CI: true
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'Client/build'
+    Contents: '**'
+    TargetFolder: '$(Build.BinariesDirectory)'
+    CleanTargetFolder: true
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(Build.BinariesDirectory)'
@@ -41,3 +56,9 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
